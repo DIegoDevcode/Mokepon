@@ -1,18 +1,20 @@
-
-
-
 function iniciarJuego() {
-    let botonMascotaJugador = document.getElementById('boton-mascota')
-    botonMascotaJugador.addEventListener('click', selecionarMascotaJugador)
+    let botónMascotaJugador = document.getElementById('boton-mascota')
+    botónMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 }
 
-function selecionarMascotaJugador(){
-    if(document.getElementById("Hipodoge").checked) {
-        alert('Selecionaste a hipodoge')
-    } else if (document.getElementById("Capipepo").checked) {
-        alert('Selecionaste a capipepo') 
-    } else if (document.getElementById("Ratigueya").checked) {
-        alert('Selecionaste a Ratigueya') 
+function seleccionarMascotaJugador(){
+    let inputHipodoge = document.getElementById("Hipodoge")
+    let inputCapipepo = document.getElementById("Capipepo")
+    let inputRatigueya = document.getElementById("Ratigueya")
+    let spanmascotajugador = document.getElementById("mascota-jugador")
+
+    if( inputHipodoge.checked) {
+        spanmascotajugador.innerHTML = "Hipodoge"
+    } else if (inputCapipepo.checked) {
+        spanmascotajugador.innerHTML = "Capipepo"
+    } else if (inputRatigueya.checked) {
+        spanmascotajugador.innerHTML = "Ratigueya"
     } else {
         alert("No seleccionaste ninguna mascota")
     }
