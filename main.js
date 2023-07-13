@@ -68,7 +68,7 @@ function ataqueAleatorioEnemigo() {
     } else{
         ataqueEnemigo = 'Tierra'
     }
-    crearMensaje
+    crearMensaje()
 }
 
 function crearMensaje() {
