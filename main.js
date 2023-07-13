@@ -71,45 +71,23 @@ function ataqueAleatorioEnemigo() {
     combate()
 }
 
-//    if(ataqueEnemigo == ataqueJugador) {
-    //       crearMensaje("EMPATE")
-    //   } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
-        //      crearMensaje("Ganaste")
-        //      if(ataqueEnemigo == 'AGUA')
-        //       crearMensaje("Perdiste")
-  //   } else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
-  //       crearMensaje("Ganaste")
-  //       if(ataqueEnemigo == 'TIERRA')
-  //      crearMensaje("Perdiste")
-  //   } else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
-      //       crearMensaje("Ganaste")
-      //   } else {
-          //       crearMensaje("Perdiste")
-          //   }
 function combate() {
-    if (ataqueEnemigo == ataqueJugador){
-        crearMensaje('Empataste!')
-    } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
-        crearMensaje('Ganaste')
-        if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Agua')
-        crearMensaje('Perdiste')
-    } 
-//     print('paper beats rock')
-//     print('computer win')
-// elif user_option == 'paper':
-//   if computer_option == 'rock':
-//     print('paper beats rock')
-//     print('Won')
-//   else:
-//     print('scissors beats paper')
-//     print('computer win')
-// elif user_option ==  'scissors':
-//   if computer_option == 'paper':
-//     print('scissors beats paper')
-//     print("won")
-//   else:
-//     print("rock beats scissors")
-//     print("computer win")
+    if (ataqueEnemigo === ataqueJugador) {
+        crearMensaje('Empataste!');
+    } else if (ataqueJugador === 'Fuego' && ataqueEnemigo === 'Tierra') {
+        crearMensaje('Ganaste');
+    } else if (ataqueJugador === 'Fuego' && ataqueEnemigo === 'Agua') {
+        crearMensaje('Perdiste');
+        // Agrega más acciones o llamadas a funciones aquí según sea necesario
+    } else if (ataqueJugador === 'Agua' && ataqueEnemigo === 'Fuego') {
+        crearMensaje('Ganaste');
+    } else if (ataqueJugador === 'Agua' && ataqueEnemigo === 'Tierra') {
+        crearMensaje('Perdiste');
+    } else if (ataqueJugador === 'Tierra' && ataqueEnemigo === 'Agua') {
+        crearMensaje('Ganaste');
+    } else if (ataqueJugador === 'Tierra' && ataqueEnemigo === 'Fuego') {
+        crearMensaje('Perdiste');
+}
 }
 
 function crearMensaje(resultado) {
