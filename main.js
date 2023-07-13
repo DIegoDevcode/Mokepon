@@ -68,14 +68,55 @@ function ataqueAleatorioEnemigo() {
     } else{
         ataqueEnemigo = 'Tierra'
     }
-    crearMensaje()
+    combate()
 }
 
-function crearMensaje() {
+//    if(ataqueEnemigo == ataqueJugador) {
+    //       crearMensaje("EMPATE")
+    //   } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
+        //      crearMensaje("Ganaste")
+        //      if(ataqueEnemigo == 'AGUA')
+        //       crearMensaje("Perdiste")
+  //   } else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
+  //       crearMensaje("Ganaste")
+  //       if(ataqueEnemigo == 'TIERRA')
+  //      crearMensaje("Perdiste")
+  //   } else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+      //       crearMensaje("Ganaste")
+      //   } else {
+          //       crearMensaje("Perdiste")
+          //   }
+function combate() {
+    if (ataqueEnemigo == ataqueJugador){
+        crearMensaje('Empataste!')
+    } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
+        crearMensaje('Ganaste')
+        if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Agua')
+        crearMensaje('Perdiste')
+    } 
+//     print('paper beats rock')
+//     print('computer win')
+// elif user_option == 'paper':
+//   if computer_option == 'rock':
+//     print('paper beats rock')
+//     print('Won')
+//   else:
+//     print('scissors beats paper')
+//     print('computer win')
+// elif user_option ==  'scissors':
+//   if computer_option == 'paper':
+//     print('scissors beats paper')
+//     print("won")
+//   else:
+//     print("rock beats scissors")
+//     print("computer win")
+}
+
+function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById('mensajes')
     
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '- PENDIENTE'
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '' + resultado
 
     sectionMensajes.appendChild(parrafo)
 }
