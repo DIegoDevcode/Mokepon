@@ -1,5 +1,5 @@
 let ataqueJugador 
-let ataqueAleatorioEnemigo
+let ataqueEnemigo
 
 function iniciarJuego() {
     let botónMascotaJugador = document.getElementById('boton-mascota')
@@ -58,7 +58,7 @@ function ataqueTierra(){
     ataqueAleatorioEnemigo()
 }
 
-function ataqueEnemigo(params) {
+function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
 
     if(ataqueAleatorio == 1 ){
@@ -68,7 +68,16 @@ function ataqueEnemigo(params) {
     } else{
         ataqueEnemigo = 'Tierra'
     }
+    crearMensaje
+}
 
+function crearMensaje() {
+    let sectionMensajes = document.getElementById('mensajes')
+    
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '- PENDIENTE'
+
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min,max) {
