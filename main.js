@@ -1,106 +1,27 @@
-let ataqueJugador 
-let ataqueEnemigo
+// Selección de mascota
+/** Función para manejar la selección de la mascota del jugador. Muestra una alerta indicando que la mascota ha sido seleccionada.*/
+function seleccionarMascotajugador() {
+    let seleccionarMokepon = document.getElementById('selecionar-mascota');
+    let mascotaElegida = seleccionarMokepon.value;
 
-function iniciarJuego() {
-    let botónMascotaJugador = document.getElementById('boton-mascota')
-    botónMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-    let botonFuego = document.getElementById('boton-fuego')
-    botonFuego.addEventListener('click', ataqueFuego)
-    let botonAgua = document.getElementById('boton-agua')
-    botonAgua.addEventListener('click', ataqueAgua)
-    let botonTierra = document.getElementById('boton-tierra')
-    botonTierra.addEventListener('click', ataqueTierra)
+    if(mascotaElegida === 'Mudhorn'){
+        alert('Has seleccionado a Mudhorn🐂⛰');
+    } else if(mascotaElegida === 'Terraclaw') {
+        alert('Has seleccionado a Terraclaw🦅⛰');
+    } else if (mascotaElegida === 'Tidelfin') {
+        alert('Has seleccionado a Tidelfin🐬💧');
+    } else if(mascotaElegida === 'Hydroscale') {
+        alert('Has seleccionado a Hydroscale🐉💧');
+    } else if(mascotaElegida === 'Pyroclaw') {
+        alert('Has seleccionado a Pyroclaw🦀🔥');
+    } else if(mascotaElegida === 'Blazetail') {
+        alert('Has seleccionado a Blazetail🦊🔥');
+    }  else if (mascotaElegida === 'Steamdrake') {
+        alert('Has seleccionado a Steamdrake 🐉💧🔥');
+    } else if (mascotaElegida === 'Flarestorm') {
+        alert('Has seleccionado a Flarestorm 🌪🔥⛰');
+    } else if (mascotaElegida === 'Terratide') {
+        alert('Has seleccionado a Terratide 🐢⛰💧');
+    } 
 }
-
-function seleccionarMascotaJugador(){
-    let inputHipodoge = document.getElementById("Hipodoge")
-    let inputCapipepo = document.getElementById("Capipepo")
-    let inputRatigueya = document.getElementById("Ratigueya")
-    let spanmascotajugador = document.getElementById("mascota-jugador")
-
-    if( inputHipodoge.checked) {
-        spanmascotajugador.innerHTML = "Hipodoge"
-    } else if (inputCapipepo.checked) {
-        spanmascotajugador.innerHTML = "Capipepo"
-    } else if (inputRatigueya.checked) {
-        spanmascotajugador.innerHTML = "Ratigueya"
-    } else {
-        alert("No seleccionaste ninguna mascota")
-    }
-    seleccionarMascotaPc()
-}
-function seleccionarMascotaPc(){
-    let mascotaAleatorio = aleatorio(1,3)
-    let spanmascotaPc = document.getElementById('mascota-enemigo')
-
-    if(mascotaAleatorio == 1 ){
-        spanmascotaPc.innerHTML = 'Hipodoge'
-    } else if(mascotaAleatorio == 2){
-        spanmascotaPc.innerHTML = 'Capipepo'
-    } else{
-        spanmascotaPc.innerHTML ='Ratigueya';
-    }
-}
-
-function ataqueFuego(){
-    ataqueJugador = 'Fuego'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueAgua(){
-    ataqueJugador = 'Agua'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueTierra(){
-    ataqueJugador = 'Tierra'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueAleatorioEnemigo() {
-    let ataqueAleatorio = aleatorio(1,3)
-
-    if(ataqueAleatorio == 1 ){
-        ataqueEnemigo = 'Fuego'
-    } else if(ataqueAleatorio == 2){
-        ataqueEnemigo = 'Agua'
-    } else{
-        ataqueEnemigo = 'Tierra'
-    }
-    combate()
-}
-
-function combate() {
-    if (ataqueEnemigo === ataqueJugador) {
-        crearMensaje('Empataste!');
-    } else if (ataqueJugador === 'Fuego' && ataqueEnemigo === 'Tierra') {
-        crearMensaje('Ganaste');
-    } else if (ataqueJugador === 'Fuego' && ataqueEnemigo === 'Agua') {
-        crearMensaje('Perdiste');
-        // Agrega más acciones o llamadas a funciones aquí según sea necesario
-    } else if (ataqueJugador === 'Agua' && ataqueEnemigo === 'Fuego') {
-        crearMensaje('Ganaste');
-    } else if (ataqueJugador === 'Agua' && ataqueEnemigo === 'Tierra') {
-        crearMensaje('Perdiste');
-    } else if (ataqueJugador === 'Tierra' && ataqueEnemigo === 'Agua') {
-        crearMensaje('Ganaste');
-    } else if (ataqueJugador === 'Tierra' && ataqueEnemigo === 'Fuego') {
-        crearMensaje('Perdiste');
-}
-}
-
-function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('mensajes')
-    
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '' + resultado
-
-    sectionMensajes.appendChild(parrafo)
-}
-
-function aleatorio(min,max) {
-    return Math.floor(Math.random()*(max-min + 1)+ min)
-}
-window.addEventListener('load', iniciarJuego)
-
+window.addEventListener('load', iniciarJuego)

@@ -8,32 +8,51 @@
     <script src="./main.js"></script>
 </head>
 <body>
-  <h1>Mokepon! 🔥💧🥌</h1>  
+  <h1>Mokepon! 🔥💧⛰</h1>  
+  <section>
+    <h2>Selecciona una mascota</h2>
+    <select id="selecionar-mascota">
+      <optgroup label="Tierra">
+        <option value="Mudhorn">Mudhorn🐂⛰</option>
+        <option value="Terraclaw">Terraclaw🦅⛰</option>
+      </optgroup>
+      <optgroup label="Agua">
+        <option value="Tidelfin">Tidelfin🐬💧</option>
+        <option value="Hydroscale">Hydroscale 🐍💧</option>
+      </optgroup>
+      <optgroup label="Fuego">
+        <option value="Pyroclaw">Pyroclaw🦀🔥</option>
+        <option value="Blazetail">Blazetail🦊🔥</option>
+      </optgroup>
+      <optgroup label="Hibrido">
+        <option value="Steamdrake">Steamdrake 🐉💧🔥</option>
+        <option value="Flarestorm">Flarestorm 🌪🔥⛰</option>
+        <option value="Terratide">Terratide 🐢⛰💧</option>
+      </optgroup>
+    </select>
+    <button id="boton-mascota">Seleccionar</button>
 
-  <section id="selecion de mascota">
-    <h2>Elige tu mascota:</h2>
-  <label for="hipodoge">Hipodoge</label>
-  <input type="radio" name="mascota" id="Hipodoge" />
-  <label for="capipepo">Capipepo</label>
-  <input type="radio" name="mascota" id="Capipepo" />
-  <label for="ratigueya">Ratigueya</label>
-  <input type="radio" name="mascota" id="Ratigueya" />
-  <button id="boton-mascota">Seleccionar</button>
   </section>
-  <section id="seleccion de habilidad">
-    <h2>Elige tu ataque:</h2>
-    <p>Tu mascota <span id="mascota-jugador"></span> tiene </span> <span>3</span> vidas</p>
-    <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span>3</span> vidas</p>
+  <section id="seleccion-ataque">
+
+    <p>Tu mascota tiene <span>3</span> vidas</p>
+    <p>La mascota del rival tiene <span>3</span> vidas</p>
+
+    <h2>Selecciona un ataque</h2>
+
     <p>
-    <button id="boton-fuego">Fuego 🔥</button>
-    <button id="boton-agua">Agua 💧</button>
-    <button id="boton-tierra">Tierra 🌱</button>
+      <button id="boton-fuego">Fuego 🔥</button>
+      <button id="boton-Agua">Agua 💧 </button>
+      <button id="boton-Tierra">Tierra 🥌</button>
     </p>
   </section>
+
   <section id="mensajes">
-    </section>
-  <section id="reiniciar">
-    <button id="boton-reiniciar">Reiniciar</button>
+    <p>Tu mascota ataco con fuego, la mascota del rival ataco con tierra - Perdiste</p>
   </section>
+
+    <section id="Reiniciar">
+      <button id="boton-reiniciar">Reiniciar</button>
+    </section>
 </body>
 </html>
