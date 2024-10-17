@@ -1,69 +1,134 @@
-/** Inicializa el juego configurando los event listeners. Específicamente, añade un event listener de clic al botón con el ID 'boton-mascota', que desencadena la función para seleccionar la mascota del jugador.
- */
-// seccion Iniciar Juego
-function iniciarJuego(){
+let ataqueJugador 
+let ataqueRival
+
+function iniciarJuego() {   
     let botonMascotajugador = document.getElementById('boton-mascota');
-    botonMascotajugador.addEventListener('click', seleccionarMascotajugador); 
+    botonMascotajugador.addEventListener('click', seleccionarMascotajugador);
+
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.addEventListener('click', ataqueFuego);
+
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.addEventListener('click', ataqueAgua);
+
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.addEventListener('click', ataqueTierra);
 }
 
-// Selección de mascota
-/** Función para manejar la selección de la mascota del jugador. Muestra una alerta indicando que la mascota ha sido seleccionada.*/
-function seleccionarMascotajugador() {
-    let seleccionarMokepon = document.getElementById('selecionar-mascota');
-    let mascotaElegida = seleccionarMokepon.value;
-    let spanMascotaJugador = document.getElementById('mascota-jugador');
 
-    if(mascotaElegida === 'Mudhorn'){
+function seleccionarMascotajugador() {
+    let selectElement = document.getElementById('selecionar-mascota');
+    let selectedPokemon = selectElement.value;
+
+    let spanMascotaJugador = document.getElementById('mascota-jugador');
+    if (selectedPokemon === 'Mudhorn') {
         spanMascotaJugador.innerHTML = 'Mudhorn';
-    } else if(mascotaElegida === 'Terraclaw') {
+    } else if (selectedPokemon === 'Terraclaw') {
         spanMascotaJugador.innerHTML = 'Terraclaw';
-    } else if (mascotaElegida === 'Tidelfin') {
+    } else if (selectedPokemon === 'Tidelfin') {
         spanMascotaJugador.innerHTML = 'Tidelfin';
-    } else if(mascotaElegida === 'Hydroscale') {
+    } else if (selectedPokemon === 'Hydroscale') {
         spanMascotaJugador.innerHTML = 'Hydroscale';
-    } else if(mascotaElegida === 'Pyroclaw') {
-        spanMascotaJugador.innerHTML = 'Pyroclaw';
-    } else if(mascotaElegida === 'Blazetail') {
+    } else if (selectedPokemon === 'pyroclaw') {
+        spanMascotaJugador.innerHTML = 'pyroclaw';
+    } else if (selectedPokemon === 'Blazetail') {
         spanMascotaJugador.innerHTML = 'Blazetail';
-    }  else if (mascotaElegida === 'Steamdrake') {
+    } else if (selectedPokemon === 'Steamdrake') {
         spanMascotaJugador.innerHTML = 'Steamdrake';
-    } else if (mascotaElegida === 'Flarestorm') {
+    } else if (selectedPokemon === 'Flarestorm') {
         spanMascotaJugador.innerHTML = 'Flarestorm';
-    } else if (mascotaElegida === 'Terratide') {
+    } else if (selectedPokemon === 'Terratide') {
         spanMascotaJugador.innerHTML = 'Terratide';
-    } 
+    } else {
+        console.log('No has seleccionado ninguna mascota');
+    }
 
     seleccionarMascotaRival();
 }
 
 function seleccionarMascotaRival() {
-    let ataqueRivalAleatorio = aleatorio(1, 9);
+    let mascotaRivalAleatorio = aleatorio(1, 9);
     let spanMascotaRival = document.getElementById('mascota-rival');
 
-
-    if(ataqueRivalAleatorio == 1){
+    if (mascotaRivalAleatorio == 1) {
         spanMascotaRival.innerHTML = 'Mudhorn';
-    } else if(ataqueRivalAleatorio == 2){
+    } else if (mascotaRivalAleatorio == 2) {
         spanMascotaRival.innerHTML = 'Terraclaw';
-    } else if(ataqueRivalAleatorio == 3){
+    } else if (mascotaRivalAleatorio == 3) {
         spanMascotaRival.innerHTML = 'Tidelfin';
-    } else if(ataqueRivalAleatorio == 4){
+    } else if (mascotaRivalAleatorio == 4) {
         spanMascotaRival.innerHTML = 'Hydroscale';
-    } else if(ataqueRivalAleatorio == 5){
+    } else if (mascotaRivalAleatorio == 5) {
         spanMascotaRival.innerHTML = 'Pyroclaw';
-    } else if (ataqueRivalAleatorio == 6){
+    } else if (mascotaRivalAleatorio == 6) {
         spanMascotaRival.innerHTML = 'Blazetail';
-    } else if (ataqueRivalAleatorio == 7){
+    } else if (mascotaRivalAleatorio == 7) {
         spanMascotaRival.innerHTML = 'Steamdrake';
-    } else if (ataqueRivalAleatorio == 8){
+    } else if (mascotaRivalAleatorio == 8) {
         spanMascotaRival.innerHTML = 'Flarestorm';
-    } else if (ataqueRivalAleatorio == 9){
+    } else if (mascotaRivalAleatorio == 9) {
         spanMascotaRival.innerHTML = 'Terratide';
     }
 }
+
+function ataqueFuego() {
+    ataqueJugador = 'Fuego';
+    ataqueAleatorioEnemigo();
+}
+
+function ataqueAgua() {
+    ataqueJugador = 'Agua';
+    ataqueAleatorioEnemigo();
+}
+
+function ataqueTierra() {
+    ataqueJugador = 'Tierra';
+    ataqueAleatorioEnemigo();
+}
+
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorio = aleatorio(1, 3);
+
+    if (ataqueAleatorio == 1) {
+        ataqueRival = 'Fuego';
+    } else if (ataqueAleatorio == 2) {
+        ataqueRival = 'Agua';
+    } else if (ataqueAleatorio == 3) {
+        ataqueRival = 'Tierra';
+    }
+
+    crearMensaje();
+}
+
+function determinarResultado(){
+    if(ataqueJugador === ataqueRival){
+        return ' Empate ';
+    } else if(
+        (ataqueJugador === 'Fuego' && ataqueRival === 'Agua') ||
+        (ataqueJugador === 'Agua' && ataqueRival === 'Tierra') ||
+        (ataqueJugador === 'Tierra' && ataqueRival === 'Fuego')
+    ){
+        return ' Perdiste ';
+    }
+    else{
+        return ' Ganaste ';
+    }
+        }
+
+
+function crearMensaje() {
+    let sectionMensajes = document.getElementById('mensajes');
+    let parrafo = document.createElement('p');
+    let resultado = determinarResultado();
+
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' y la mascota del rival atacó con ' + ataqueRival +  resultado;
+
+    sectionMensajes.appendChild(parrafo);
+}
+
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-window.addEventListener('load', iniciarJuego)
+window.addEventListener('load', iniciarJuego);
