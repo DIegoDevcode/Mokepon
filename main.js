@@ -1,5 +1,7 @@
 let ataqueJugador 
 let ataqueRival
+let vidasJugador = 3
+let vidasRival =  3
 
 function iniciarJuego() {   
     let botonMascotajugador = document.getElementById('boton-mascota');
@@ -15,7 +17,7 @@ function iniciarJuego() {
     botonTierra.addEventListener('click', ataqueTierra);
 }
 
-
+// Funcion para seleccionar la mascota del jugador
 function seleccionarMascotajugador() {
     let selectElement = document.getElementById('selecionar-mascota');
     let selectedPokemon = selectElement.value;
@@ -113,8 +115,19 @@ function determinarResultado(){
     else{
         return ' Ganaste ';
     }
-        }
+}
+function contadorVidas(resultado) {
+    let spanVidasJugador = document.getElementById('vidas-jugador');
+    let spanVidasRival = document.getElementById('vidas-rival');
 
+    if (resultado === ' Perdiste ') {
+        vidasJugador--;
+        spanVidasJugador.innerHTML = vidasJugador;
+    } else if (resultado === ' Ganaste ') {
+        vidasRival--;
+        spanVidasRival.innerHTML = vidasRival;
+    }
+}
 
 function crearMensaje() {
     let sectionMensajes = document.getElementById('mensajes');
@@ -124,6 +137,7 @@ function crearMensaje() {
     parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' y la mascota del rival atacó con ' + ataqueRival +  resultado;
 
     sectionMensajes.appendChild(parrafo);
+    contadorVidas(resultado);
 }
 
 
