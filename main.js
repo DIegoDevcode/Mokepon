@@ -4,7 +4,11 @@ let vidasJugador = 3    // Variable para almacenar las vidas del jugador
 let vidasRival =  3     // Variable para almacenar las vidas del rival
 
 // Función que inicializa el juego
-function iniciarJuego() {   
+function iniciarJuego() {  
+    let sectionSelecionarAtaque = document.getElementById('seleccion-ataque');  // Obtiene el elemento section de selección de ataque
+    sectionSelecionarAtaque.style.display = 'none';  // Oculta el elemento section de selección de ataque
+    
+    // Obtiene el botón de selección de mascota y añade un event listener
     let botonMascotajugador = document.getElementById('boton-mascota');   // Obtiene el botón de selección de mascota
     botonMascotajugador.addEventListener('click', seleccionarMascotajugador); // Añade un event listener al botón de selección de mascota
 
@@ -18,10 +22,17 @@ function iniciarJuego() {
 
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click', ataqueTierra);
+
+    // Obtiene el botón de reiniciar juego y añade un event listener
+    let botonReiniciar = document.getElementById('Reiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 }
 
 // Funcion para seleccionar la mascota del jugador
 function seleccionarMascotajugador() {
+    let sectionseleccionarAtaque = document.getElementById('seleccion-ataque');  // Obtiene el elemento section de selección de ataque
+    sectionseleccionarAtaque.style.display = 'block';  // Muestra el elemento section de selección de ataque
+
     let selectElement = document.getElementById('selecionar-mascota');  // Obtiene el elemento select de mascotas
     let selectedPokemon = selectElement.value;  // Obtiene el valor seleccionado en el select.
 
@@ -155,14 +166,7 @@ function contadorVidas(resultado) {
         reiniciarJuego();
     }
 }
-// Función para reiniciar el juego
-function reiniciarJuego() {
-    vidasJugador = 3;
-    vidasRival = 3;
-    document.getElementById('vidas-jugador').innerHTML = vidasJugador;
-    document.getElementById('vidas-rival').innerHTML = vidasRival;
-    document.getElementById('mensajes').innerHTML = '';
-}
+
 // Función para crear el mensaje con el resultado del ataque
 function crearMensaje() {
     let sectionMensajes = document.getElementById('mensajes');
@@ -177,6 +181,10 @@ function crearMensaje() {
 }
 
 
+// Función para reiniciar el juego
+function reiniciarJuego() {
+    location.reload();
+}
 // Función para generar un número aleatorio entre un rango de números
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
