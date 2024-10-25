@@ -1,0 +1,56 @@
+.titulo{
+    color: brown;
+    width: 330px;
+    height: 50px;
+    background-color: thistle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selecionar-mascota{
+    width: 330px;
+    height: 50px;
+}
+
+.water{
+    color: rgb(47, 15, 208);
+}
+
+.earth{
+    color: brown;
+}
+
+.fire{
+    color: rgb(208, 15, 15);
+}
+
+.hybride{
+    color: lightsalmon;
+}
+
+#boton-mascota{
+    width: 330px;
+    height: 50px;
+    background-color: thistle;
+}
+
+.seleccion-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Reiniciar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton-reiniciar{
+    width: 330px;
+    height: 50px;
+    background-color: thistle;
+}
