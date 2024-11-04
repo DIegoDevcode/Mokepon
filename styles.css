@@ -4,22 +4,32 @@
 
 body{
     background-color: #88C273;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
 .titulo{
     color: brown;
     width: 330px;
     height: 50px;
-    background-color: thistle;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+}
+
+.mascota-subtitulo{
+font-size: 28px;
 }
 
 #selecionar-mascota{
     width: 330px;
     height: 50px;
     text-align: center;
+    background-color: lightgoldenrodyellow;
 }
 
 .water{
@@ -41,7 +51,7 @@ body{
 #boton-mascota{
     width: 330px;
     height: 50px;
-    background-color: thistle;
+    background-color: yellow;
 }
 
 .seleccion-mascota{
@@ -49,6 +59,15 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+.seleccion-ataque{
+   text-align: center;
+   font-size: 23px;
+}
+.ataque-subtitulo{
+    font-size: 28px;
 }
 
 #Reiniciar{
@@ -61,5 +80,36 @@ body{
 #boton-reiniciar{
     width: 330px;
     height: 50px;
-    background-color: thistle;
+    background-color: yellow;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#boton-agua{
+    background-color: rgb(47, 15, 208);
+    color: whitesmoke;
+    text-align: center;
+    width: 125px;
+    height: 40px;
+}
+
+#boton-tierra{
+    background-color: brown;
+    color: whitesmoke;
+    text-align: center;
+    width: 125px;
+    height: 40px;
+}
+
+#boton-fuego{
+    background-color: rgb(208, 15, 15);
+    color: whitesmoke;
+    text-align: center;
+    width: 125px;
+    height: 40px;
 }
